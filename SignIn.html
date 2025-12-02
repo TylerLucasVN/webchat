@@ -1,1 +1,195 @@
-<h1>file log in</h1>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vchat - Messenger Style</title>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CẤU HÌNH MÀU SẮC MESSENGER --- */
+        :root {
+            /* Gradient trứ danh của Messenger */
+            --mess-gradient: linear-gradient(to right, #00c6ff, #0072ff); 
+            --bg-body: #f0f2f5;
+            --input-bg: #f5f5f5;
+            --text-main: #050505;
+            --text-sub: #65676b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Helvetica, Arial, sans-serif; /* Font chuẩn của Meta */
+        }
+
+        body {
+            background-color: var(--bg-body);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* --- CARD GIAO DIỆN --- */
+        .login-card {
+            background: white;
+            width: 100%;
+            max-width: 400px;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* --- LOGO MESSENGER STYLE --- */
+        .logo-area {
+            margin-bottom: 20px;
+        }
+
+        .logo-icon {
+            font-size: 60px;
+            font-weight: 800;
+            /* Kỹ thuật làm chữ có màu Gradient */
+            background: var(--mess-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .welcome-text {
+            font-size: 20px;
+            color: var(--text-main);
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        /* --- INPUT TRÒN NHƯ VIÊN THUỐC --- */
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px 20px;
+            border: 1px solid #dddfe2; /* Viền mờ nhạt */
+            background-color: white;
+            border-radius: 30px; /* Bo tròn cực đại */
+            font-size: 16px;
+            color: var(--text-main);
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        input:focus {
+            border-color: #0072ff;
+            box-shadow: 0 0 0 2px rgba(0, 114, 255, 0.2);
+        }
+
+        /* --- NÚT BẤM GRADIENT --- */
+        .btn-continue {
+            width: 100%;
+            padding: 12px;
+            background: var(--mess-gradient); /* Màu nền Gradient */
+            color: white;
+            border: none;
+            border-radius: 30px; /* Bo tròn giống input */
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            transition: opacity 0.2s;
+        }
+
+        .btn-continue:hover {
+            opacity: 0.9;
+        }
+
+        /* --- LIÊN KẾT PHỤ --- */
+        .forgot-pass {
+            font-size: 14px;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .forgot-pass a {
+            color: #0072ff;
+            text-decoration: none;
+        }
+        .forgot-pass a:hover {
+            text-decoration: underline;
+        }
+
+        .divider {
+            border-bottom: 1px solid #dadde1;
+            margin: 20px 0;
+        }
+
+        .create-acc-btn {
+            background-color: #42b72a; /* Màu xanh lá đặc trưng nút tạo tk của Face/Mess */
+            color: white;
+            padding: 12px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            display: inline-block;
+        }
+        
+        .create-acc-btn:hover {
+            background-color: #36a420;
+        }
+
+        /* --- RESPONSIVE CHO MOBILE --- */
+        @media (max-width: 480px) {
+            body {
+                background-color: white; /* Mobile nền trắng 100% */
+                align-items: flex-start; /* Đẩy lên trên */
+            }
+
+            .login-card {
+                box-shadow: none;
+                padding-top: 60px; /* Cách lề trên một chút */
+            }
+            
+            .logo-icon {
+                font-size: 70px; /* Logo to hơn trên đt */
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="login-card">
+        <div class="logo-area">
+            <div class="logo-icon">⚡ Vchat</div>
+        </div>
+
+        <h2 class="welcome-text">Connect with your friends</h2>
+
+        <form>
+            <div class="input-group">
+                <input type="email" placeholder="Email or Phone Number" required>
+            </div>
+
+            <div class="input-group">
+                <input type="password" placeholder="Password" required>
+            </div>
+
+            <button type="submit" class="btn-continue">Log In</button>
+            
+            <div class="forgot-pass">
+                <a href="#">Forgot Password?</a>
+            </div>
+
+            <div class="divider"></div>
+
+            <a href="#" class="create-acc-btn">Create New Account</a>
+        </form>
+    </div>
+
+</body>
+</html>
